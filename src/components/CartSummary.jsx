@@ -14,7 +14,7 @@ function PaymentMethods() {
       <label className="flex items-center gap-2 cursor-pointer">
         <input type="radio" name="payment" defaultChecked />
         <FaCcMastercard className="text-2xl text-gray-700" />
-        <span>Credit Card</span>
+        <span>Master Card</span>
       </label>
       <label className="flex items-center gap-2 cursor-pointer">
         <input type="radio" name="payment" />
@@ -24,7 +24,6 @@ function PaymentMethods() {
     </div>
   );
 }
-
 export default function CartSummary() {
   const totalItems = useCartStore((state) => state.totalItems());
   const totalPrice = useCartStore((state) => state.totalPrice());
@@ -80,10 +79,10 @@ export default function CartSummary() {
 
   return (
     <div className="border rounded-xl p-4 sm:p-6 bg-white shadow-sm w-full">
-      <h3 className="font-medium mb-4 text-lg sm:text-xl">How you’ll pay</h3>
+<h3 className="font-medium mb-4 text-lg sm:text-xl">How you’ll pay</h3>
 
-      {/* Payment Methods */}
-      <PaymentMethods />
+{/* Payment Methods */}
+<PaymentMethods />
 
       {/* Input Kupon */}
       <div className="flex gap-2 mt-6">
@@ -99,31 +98,28 @@ export default function CartSummary() {
         >
           Apply
         </Button>
-      </div>
-
-      {error && <p className="text-sm text-red-500 mt-2">{error}</p>}
-
-      {/* Ringkasan Harga */}
-      <div className="border-t mt-6 pt-4 text-sm sm:text-base space-y-2">
-        <div className="flex justify-between">
-          <span>Item(s) total</span>
-          <span>${totalPrice.toFixed(2)}</span>
-        </div>
-        {discount > 0 && (
-          <div className="flex justify-between text-green-600">
-            <span>Discount</span>
-            <span>- ${discount.toFixed(2)}</span>
-          </div>
-        )}
-        <div className="flex justify-between">
-          <span>Subtotal</span>
-          <span>${(totalPrice - discount).toFixed(2)}</span>
-        </div>
-        <div className="flex justify-between">
-          <span>Shipping</span>
-          <span>${shippingCost.toFixed(2)}</span>
-        </div>
-      </div>
+</div>
+{/* Summary Section */}
+<div className="mt-6 space-y-2">
+  <div className="flex justify-between">
+    <span>Item(s) total</span>
+    <span>${totalPrice.toFixed(2)}</span>
+  </div>
+  {discount > 0 && (
+    <div className="flex justify-between text-green-600">
+      <span>Discount</span>
+      <span>- ${discount.toFixed(2)}</span>
+    </div>
+  )}
+  <div className="flex justify-between">
+    <span>Subtotal</span>
+    <span>${(totalPrice - discount).toFixed(2)}</span>
+  </div>
+  <div className="flex justify-between">
+    <span>Shipping</span>
+    <span>${shippingCost.toFixed(2)}</span>
+  </div>
+</div>
 
       {/* Total */}
       <div className="flex justify-between font-semibold text-base sm:text-lg mt-4">
