@@ -1,22 +1,36 @@
 "use client";
 
-import { useEffect } from "react";
+import { Component } from 'react';
 
-export default function GlobalError({ error, reset }) {
-  useEffect(() => {
-    console.error("App Error:", error);
-  }, [error]);
+class ErrorBoundary extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { hasError: false };
+  }
 
-  return (
-    <div className="flex flex-col items-center justify-center h-screen text-center space-y-4">
-      <h2 className="text-2xl font-bold text-red-600">Something went wrong!</h2>
-      <p className="text-gray-600">{error.message}</p>
-      <button
-        onClick={() => reset()}
-        className="px-4 py-2 bg-teal-600 text-white rounded hover:bg-teal-700"
-      >
-        Try again
-      </button>
-    </div>
-  );
+  static getDerivedStateFromError(error) {
+    return { hasError: true };
+  }
+
+  render() {
+    if (this.state.hasError) {
+      return (
+        <div className="flex items-center justify-center min-h-screen">
+          <div className="text-center">
+            <p className="text-red-600">Something went wrong</p>
+            <button 
+              onClick={() => window.location.reload()} 
+              className="mt-4 px-4 py-2 bg-teal-600 text-white rounded-lg"
+            >
+              Retry
+            </button>
+          </div>
+        </div>
+      );
+    }
+
+    return this.props.children;
+  }
 }
+
+export default ErrorBoundary;
