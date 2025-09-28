@@ -5,7 +5,25 @@ import { useCartStore } from "@/store/cartStore";
 import { useToast } from "@/components/ui/use-toast";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import { FaPaypal, FaCcMastercard } from "react-icons/fa"
 
+// Komponen PaymentMethods modular
+function PaymentMethods() {
+  return (
+    <div className="flex flex-col space-y-3 mt-4">
+      <label className="flex items-center gap-2 cursor-pointer">
+        <input type="radio" name="payment" defaultChecked />
+        <FaCcMastercard className="text-2xl text-gray-700" />
+        <span>Master Card</span>
+      </label>
+      <label className="flex items-center gap-2 cursor-pointer">
+        <input type="radio" name="payment" />
+        <FaPaypal className="text-2xl text-gray-700" />
+        <span>PayPal</span>
+      </label>
+    </div>
+  );
+}
 export default function CartSummary() {
   const totalItems = useCartStore((state) => state.totalItems());
   const totalPrice = useCartStore((state) => state.totalPrice());
@@ -62,20 +80,7 @@ export default function CartSummary() {
       <h3 className="font-medium mb-4 text-lg sm:text-xl">How you’ll pay</h3>
 
       {/* Metode Pembayaran */}
-      <div className="space-y-3">
-        <label className="flex items-center gap-2 cursor-pointer">
-          <input type="radio" name="payment" defaultChecked />
-          <img
-            src="/visa-mastercard.png"
-            alt="Visa Mastercard"
-            className="h-5"
-          />
-        </label>
-        <label className="flex items-center gap-2 cursor-pointer">
-          <input type="radio" name="payment" />
-          <span>PayPal</span>
-        </label>
-      </div>
+      <PaymentMethods />
 
       {/* Input Kupon */}
       <div className="flex gap-2 mt-6">
