@@ -2,9 +2,6 @@
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 @theme inline {
   --color-background: var(--background);
@@ -123,3 +120,17 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* footer animation */
+@layer utilities {
+  @keyframes marquee-right {
+    0% { transform: translateX(-50%); }
+    100% { transform: translateX(0%); }
+  }
+
+  .animate-marquee-right {
+    animation: marquee-right 15s linear infinite;
+  }
+}
+
+
