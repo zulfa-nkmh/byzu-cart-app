@@ -3,6 +3,7 @@ import Navbar from "../components/navbar"
 import Footer from "../components/footer"
 import { Toaster } from "@/components/ui/toaster" 
 
+
 export const metadata = {
   title: "My Cart App",
   description: "Shopping cart with Next.js + shadcn/ui",

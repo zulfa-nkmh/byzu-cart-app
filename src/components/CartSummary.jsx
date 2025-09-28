@@ -5,6 +5,25 @@ import { useCartStore } from "@/store/cartStore";
 import { useToast } from "@/components/ui/use-toast";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import { FaPaypal, FaCcMastercard } from "react-icons/fa";
+
+// Komponen PaymentMethods modular
+function PaymentMethods() {
+  return (
+    <div className="flex flex-col space-y-3 mt-4">
+      <label className="flex items-center gap-2 cursor-pointer">
+        <input type="radio" name="payment" defaultChecked />
+        <FaCcMastercard className="text-2xl text-gray-700" />
+        <span>Credit Card</span>
+      </label>
+      <label className="flex items-center gap-2 cursor-pointer">
+        <input type="radio" name="payment" />
+        <FaPaypal className="text-2xl text-gray-700" />
+        <span>PayPal</span>
+      </label>
+    </div>
+  );
+}
 
 export default function CartSummary() {
   const totalItems = useCartStore((state) => state.totalItems());
@@ -18,6 +37,7 @@ export default function CartSummary() {
   const shippingCost = 6;
   const { toast } = useToast();
 
+  // Fungsi apply coupon
   const handleApplyCoupon = () => {
     if (!coupon.trim()) {
       setError("Please enter a coupon code.");
@@ -48,6 +68,7 @@ export default function CartSummary() {
     }
   };
 
+  // Fungsi clear cart
   const handleClearCart = () => {
     clearCart();
     toast({
@@ -61,21 +82,8 @@ export default function CartSummary() {
     <div className="border rounded-xl p-4 sm:p-6 bg-white shadow-sm w-full">
       <h3 className="font-medium mb-4 text-lg sm:text-xl">How you’ll pay</h3>
 
-      {/* Metode Pembayaran */}
-      <div className="space-y-3">
-        <label className="flex items-center gap-2 cursor-pointer">
-          <input type="radio" name="payment" defaultChecked />
-          <img
-            src="/visa-mastercard.png"
-            alt="Visa Mastercard"
-            className="h-5"
-          />
-        </label>
-        <label className="flex items-center gap-2 cursor-pointer">
-          <input type="radio" name="payment" />
-          <span>PayPal</span>
-        </label>
-      </div>
+      {/* Payment Methods */}
+      <PaymentMethods />
 
       {/* Input Kupon */}
       <div className="flex gap-2 mt-6">
