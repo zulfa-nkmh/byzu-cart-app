@@ -1,4 +1,5 @@
 // components/HeroSection.jsx
+import Link from "next/link";
 import Image from 'next/image';
 import React from 'react';
 import { ChevronRight, Users, Package } from 'lucide-react'; 
@@ -65,23 +66,24 @@ const HeroSection = () => {
 
         {/* Kolom Kanan: Full Width Gambar */}
         <div className="hidden lg:block relative h-[66vh] w-full">
-          <Image 
-            src="/flatlay-outfit-travel.jpg" 
-            alt="Group of people modeling clothing" 
-            fill
-            className="object-cover"
-          />
-          <a 
-            href="#" 
-            className="absolute bottom-6 right-6 w-20 h-20 rounded-full bg-white flex items-center justify-center text-xs font-semibold uppercase tracking-wider shadow-xl border border-gray-100 hover:scale-105 transition-transform"
-            style={{ color: primaryGreen }}
-          >
-            <span className="text-center leading-tight">
-              Explore <br/> best offers
-            </span>
-            <ChevronRight className="w-4 h-4 ml-1 absolute transform translate-x-3 translate-y-2" />
-          </a>
-        </div>
+      <Image 
+        src="/flatlay-outfit-travel.jpg" 
+        alt="Group of people modeling clothing" 
+        fill
+        className="object-cover"
+      />
+
+      <Link 
+        href="/offers" // ganti sesuai rute tujuan
+        className="absolute bottom-6 right-6 w-20 h-20 rounded-full bg-white flex items-center justify-center text-xs font-semibold uppercase tracking-wider shadow-xl border border-gray-100 hover:scale-105 transition-transform"
+        style={{ color: primaryGreen }}
+      >
+        <span className="text-center leading-tight">
+          Explore <br/> best offers
+        </span>
+        <ChevronRight className="w-4 h-4 ml-1 absolute transform translate-x-3 translate-y-2" />
+      </Link>
+    </div>
       </div>
 
       {/* Footer "BYZU" */}

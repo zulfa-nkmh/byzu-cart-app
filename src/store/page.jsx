@@ -3,6 +3,7 @@
 import { useCartStore } from "@/store/cartStore";
 import CartItem from "@/components/CartItem";
 import CartSummary from "@/components/CartSummary";
+import Link from "next/link";
 
 export default function CartPage() {
   const cart = useCartStore((s) => s.cart);
@@ -14,12 +15,12 @@ export default function CartPage() {
       {cart.length === 0 ? (
         <div className="text-center py-20 text-black">
           <p className="text-lg">🛒 Your cart is empty</p>
-          <a
+          <Link
             href="/"
             className="mt-4 inline-block px-6 py-2 bg-teal-600 text-white rounded-lg hover:bg-teal-700"
           >
             Continue Shopping
-          </a>
+          </Link>
         </div>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

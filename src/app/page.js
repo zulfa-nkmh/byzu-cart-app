@@ -13,12 +13,12 @@ export default function Home() {
       <div
         style={{
           display: "flex",
-          flexDirection: "column", // agar bisa 2 baris
-          alignItems: "center",    // center horizontal
-          justifyContent: "center",// center vertical jika perlu
+          flexDirection: "column", 
+          alignItems: "center",    
+          justifyContent: "center",
           textAlign: "center",
           margin: "2rem 0",
-          color: "green",          // warna font hijau
+          color: "green",          
           fontSize: "2rem",
           fontWeight: "bold",
           gap: "1rem",
