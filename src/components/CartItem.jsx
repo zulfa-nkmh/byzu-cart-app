@@ -3,15 +3,11 @@ import PropTypes from "prop-types";
 import { useCartStore } from "@/store/cartStore";
 import { Trash2 } from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
+import Counter from "@/components/counter";
 
 export default function CartItem({ product }) {
   const { toast } = useToast();
-  const addToCart = useCartStore((s) => s.addToCart);
-  const decreaseQty = useCartStore((s) => s.decreaseQty);
   const removeFromCart = useCartStore((s) => s.removeFromCart);
-  const getQuantity = useCartStore((s) => s.getQuantity);
-
-  const quantity = getQuantity(product.id);
 
   return (
     <div className="bg-white p-4 rounded-2xl shadow grid grid-cols-1 sm:grid-cols-3 gap-4">
@@ -43,34 +39,13 @@ export default function CartItem({ product }) {
           </button>
 
           {/* Qty Control */}
-          <div className="flex items-center gap-2">
-            <button
-              onClick={() => {
-                decreaseQty(product.id);
-                toast({ title: "Decreased", description: product.title });
-              }}
-              className="px-3 py-1 bg-gray-200 rounded-lg text-lg font-bold hover:bg-gray-500"
-            >
-              –
-            </button>
-
-            <span className="text-md font-semibold">{quantity}</span>
-
-            <button
-              onClick={() => {
-                addToCart(product);
-                toast({ title: "Added to cart", description: product.title, type: "success" });
-              }}
-              className="px-3 py-1 bg-teal-600 text-white rounded-lg text-lg font-bold hover:bg-teal-500"
-            >
-              +
-            </button>
-          </div>
+          <Counter product={product} showSubtotal />
         </div>
       </div>
     </div>
   );
 }
+
 
 CartItem.propTypes = {
   product: PropTypes.shape({

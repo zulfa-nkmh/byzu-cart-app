@@ -24,14 +24,6 @@ export const useCartStore = create((set, get) => ({
     set({ cart: get().cart.filter((item) => item.id !== id) })
   },
 
-  increaseQty: (id) => {
-    set({
-      cart: get().cart.map((item) =>
-        item.id === id ? { ...item, quantity: item.quantity + 1 } : item
-      ),
-    })
-  },
-
   decreaseQty: (id) => {
     set((state) => ({
       cart: state.cart
@@ -48,7 +40,8 @@ export const useCartStore = create((set, get) => ({
     const item = get().cart.find((i) => i.id === productId)
     return item ? item.quantity : 0
   },
-clearCart: () => set({ cart: [] }),
+
+  clearCart: () => set({ cart: [] }),
 
   totalItems: () =>
     get().cart.reduce((acc, item) => acc + item.quantity, 0),

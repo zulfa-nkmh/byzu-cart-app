@@ -14,9 +14,9 @@ export default function CardProductCart({ product, onSelect }) {
         <p className="text-gray-500 line-clamp-2">{product.description}</p>
         <p className="font-bold mt-2">${product.price}</p>
       </div>
-        {/* Counter ala mentor */}
-        <Counter product={product} />
-      
+
+      {/* Qty Control */}
+      <Counter product={product} showSubtotal />
     </div>
   );
 }
