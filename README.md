@@ -1,4 +1,4 @@
-# 🛒 Byzu Cart App
+# 🛒 ByZu Cart App
 
 Aplikasi keranjang belanja sederhana berbasis **Next.js** dengan state management **Zustand** dan styling **Tailwind CSS + shadcn/ui**.  
 Dibuat untuk latihan membangun alur e-commerce (Product → Cart → Checkout).
