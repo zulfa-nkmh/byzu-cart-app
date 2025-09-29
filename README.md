@@ -1,36 +1,62 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🛒 Byzu Cart App
 
-## Getting Started
+Aplikasi keranjang belanja sederhana berbasis **Next.js** dengan state management **Zustand** dan styling **Tailwind CSS + shadcn/ui**.  
+Dibuat untuk latihan membangun alur e-commerce (Product → Cart → Checkout).
 
-First, run the development server:
+---
 
-```bash
+## ✨ Fitur Utama
+
+- 📦 Daftar produk dengan tampilan modern (shadcn/ui)  
+- ➕ Tambah produk ke keranjang  
+- ➖ Hapus / kurangi jumlah produk di keranjang  
+- 🔄 Update jumlah item secara real-time (Zustand store)  
+- 💰 Ringkasan total harga (disc code : BYZU10) & item  
+- 📱 UI responsif (Tailwind CSS)  
+
+---
+
+## 🛠 Teknologi
+
+- [Next.js](https://nextjs.org/) – framework React full-stack  
+- [Zustand](https://zustand-demo.pmnd.rs/) – state management ringan  
+- [Tailwind CSS](https://tailwindcss.com/) – utility-first CSS framework  
+- [shadcn/ui](https://ui.shadcn.com/) – komponen UI siap pakai berbasis Tailwind  
+
+---
+
+## 🚀 Instalasi & Menjalankan Project
+
+1. Install dependency:
+
+npm install
+
+2. Jalankan development server:
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+3. Akses di browser:
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+http://localhost:3000
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+👩‍💻 Author : Zulfatun Nikmah
+  GitHub: @zulfa-nkmh
 
-## Learn More
+  📜 Lisensi
 
-To learn more about Next.js, take a look at the following resources:
+MIT License – bebas digunakan & dimodifikasi dengan menyertakan atribusi.
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📜 Lisensi
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+MIT License  
 
-## Deploy on Vercel
+Copyright (c) 2025 Zulfa NKMH
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Izin diberikan, secara gratis, kepada siapa pun yang mendapatkan salinan perangkat lunak ini dan file dokumentasi terkait ("Perangkat Lunak"), untuk memperlakukan Perangkat Lunak tanpa batasan, termasuk tanpa batasan hak untuk menggunakan, menyalin, mengubah, menggabungkan, menerbitkan, mendistribusikan, mensublisensikan, dan/atau menjual salinan Perangkat Lunak, serta mengizinkan orang yang diberikan Perangkat Lunak untuk melakukannya, dengan ketentuan berikut:  
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Pemberitahuan hak cipta di atas dan pemberitahuan izin ini harus disertakan dalam semua salinan atau bagian substansial dari Perangkat Lunak.  
+
+PERANGKAT LUNAK INI DISEDIAKAN "SEBAGAIMANA ADANYA", TANPA JAMINAN JENIS APA PUN, BAIK TERSURAT MAUPUN TERSIRAT, TERMASUK NAMUN TIDAK TERBATAS PADA JAMINAN KELAYAKAN UNTUK DIPERDAGANGKAN, KESESUAIAN UNTUK TUJUAN TERTENTU DAN NONPELANGGARAN.  
+DALAM HAL APA PUN PARA PENULIS ATAU PEMEGANG HAK CIPTA TIDAK BERTANGGUNG JAWAB ATAS KLAIM, KERUSAKAN, ATAU KEWAJIBAN LAINNYA, BAIK DALAM TINDAKAN KONTRAK, PERBUATAN MELAWAN HUKUM, ATAU LAINNYA, YANG TIMBUL DARI, DARI ATAU SEHUBUNGAN DENGAN PERANGKAT LUNAK ATAU PENGGUNAAN ATAU HUBUNGAN LAINNYA DENGAN PERANGKAT LUNAK.
+
